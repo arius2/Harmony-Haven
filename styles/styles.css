@@ -71,6 +71,7 @@ html {
   color: #1f2d0e;
   font-family: "Marcellus SC", serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 a {
@@ -81,6 +82,11 @@ a {
 ul {
   text-decoration: none;
   list-style: none;
+}
+
+.container-landing {
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Header */
@@ -104,19 +110,23 @@ ul {
   height: 80rem;
   rotate: 36.12deg;
   background: linear-gradient(#ed9255, #fff3ec);
-  /* position: fixed; */
   transform: translate(20rem, -10rem);
 }
 
 .logo {
-  height: 7.4rem;
+  height: 6rem;
+}
+
+.logo:hover {
+  transform: scale(1.005);
+  transition: all 0.5s ease-in-out;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  padding: 1.5rem 0;
   gap: auto;
 }
 
@@ -192,4 +202,65 @@ ul {
   color: #fbe7d8;
   transition: all 0.3s;
   box-shadow: none;
+}
+
+/* Hero Section */
+
+.hero-section {
+  overflow: hidden;
+}
+
+.hero-decoration1 {
+  height: 40rem;
+  width: auto;
+  position: absolute;
+  top: 10rem;
+  left: -10rem;
+  z-index: -1;
+}
+
+.hero-decoration2 {
+  position: absolute;
+  height: auto;
+  width: 60rem;
+  top: 25rem;
+  rotate: 180deg;
+  opacity: 90%;
+  overflow: hidden;
+}
+
+.hero-img {
+  height: 48rem;
+  position: absolute;
+  top: 37rem;
+  right: 20rem;
+  transform: translateY(-55%);
+}
+
+.hero-img-shadow {
+  border-radius: 50%;
+  height: 40rem;
+  width: 40rem;
+  background-color: black;
+  box-shadow: 20px 20px 20px #6b330d59;
+  top: 37rem;
+  right: 25rem;
+  transform: translateY(-55%);
+  position: absolute;
+  z-index: -1;
+}
+
+/* Animation */
+.hover-animation {
+  animation: MoveUpDown 10s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
 }
