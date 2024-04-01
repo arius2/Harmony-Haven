@@ -286,6 +286,35 @@ ul {
   right: 68rem;
 }
 
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 30%;
+  left: 15rem;
+  flex-direction: column;
+}
+
+.hero-text {
+  font-size: 5rem;
+}
+
+.hero-title {
+  color: #ed9255;
+  font-size: 7rem;
+}
+
+.hero-btns {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-btns button {
+  width: 14rem;
+}
+
 /* Animation */
 .hover-animation-music {
   animation: MoveUpDown 7s linear infinite;
