@@ -250,6 +250,15 @@ ul {
   z-index: -1;
 }
 
+.hero-decoration3 {
+  position: fixed;
+  width: 50rem;
+  rotate: 45deg;
+  left: -30rem;
+  top: 40rem;
+  opacity: 60%;
+}
+
 /* Animation */
 .hover-animation {
   animation: MoveUpDown 10s linear infinite;
