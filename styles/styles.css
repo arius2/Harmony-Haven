@@ -86,6 +86,7 @@ ul {
 
 .container-landing {
   height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -94,19 +95,18 @@ ul {
   /* height: 74rem;
   width: 91.2rem; */
   height: 67rem;
-  width: 60rem;
+  width: 50rem;
   background-color: #fbe7d8;
-  border-radius: 0 0 500 500;
   position: absolute;
   z-index: -1;
   top: 0;
-  right: -15rem;
-  border-radius: 0 0 500% 500%;
+  right: 0;
+  border-radius: 0 0 45% 45%;
   overflow: hidden;
 }
 .background-rectangle2 {
-  width: 60rem;
-  height: 80rem;
+  width: 100rem;
+  height: 100rem;
   rotate: 36.12deg;
   background: linear-gradient(#ed9255, #fff3ec);
   transform: translate(20rem, -10rem);
@@ -223,10 +223,10 @@ ul {
 .hero-decoration2 {
   position: absolute;
   height: auto;
-  width: 60rem;
-  top: 25rem;
+  width: 55rem;
+  top: 45rem;
   rotate: 180deg;
-  opacity: 90%;
+  opacity: 40%;
   overflow: hidden;
 }
 
@@ -234,7 +234,7 @@ ul {
   height: 48rem;
   position: absolute;
   top: 37rem;
-  right: 20rem;
+  right: 18rem;
   transform: translateY(-55%);
 }
 
@@ -245,7 +245,7 @@ ul {
   background-color: black;
   box-shadow: 20px 20px 20px #6b330d59;
   top: 37rem;
-  right: 25rem;
+  right: 23rem;
   transform: translateY(-55%);
   position: absolute;
   z-index: -1;
@@ -299,16 +299,17 @@ ul {
 
 .offer-details h2 {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 3rem;
   color: #1f2d0e;
 }
 
 .offer-details p {
   color: #647431;
   margin-top: 0.5rem;
+  font-size: 1.6rem;
 }
 
-button {
+.offer-card button {
   padding: 10px 20px;
   border: none;
   background-color: #1f2d0e;
@@ -321,7 +322,7 @@ button {
   margin-top: 2rem;
 }
 
-button:hover {
+.offer-card button:hover {
   background-color: #ed9255;
   transform: scale(1.01);
 }
