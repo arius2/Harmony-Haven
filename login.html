@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Harmony Haven</title>
+</head>
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="hidden" id="register_form">
+        <label for="username">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+        <label for="password2">Confirm Password</label>
+        <input type="password" name="password2" id="password2">
+
+        <button type="submit" id="register_btn">Register</button>
+        <a href="javascript:void()" id="switch_to_login">Login</a>
+    </div>
+
+    <div id="login_form">
+        <label for="email_login">Email</label>
+        <input type="email" name="email" id="email_login">
+
+        <label for="password_login">Password</label>
+        <input type="password" name="password" id="password_login">
+
+        <button type="submit" id="login_btn">Login</button>
+        <a href="javascript:void()" id="switch_to_register">Register</a>
+    </div>
+</body>
+<script type="module">
+    import { login, register } from "./auth.js";
+
+    // UI references
+    var register_btn = document.getElementById("register_btn");
+    var login_btn = document.getElementById("login_btn");
+    var switch_to_login = document.getElementById("switch_to_login");
+    var switch_to_register = document.getElementById("switch_to_register");
+
+    var name_input = document.getElementById("name");
+    var email_input = document.getElementById("email");
+    var password_input = document.getElementById("password");
+    var password2_input = document.getElementById("password2");
+
+    var email_login = document.getElementById("email_login");
+    var password_login = document.getElementById("password_login");
+
+    function on_login_clicked() {
+        login(email_login.value, password_login.value);
+    }
+
+    function on_register_clicked() {
+        register(
+            name_input.value,
+            email_input.value,
+            password_input.value,
+            password2_input.value
+        );
+    }
+
+    function switch_mode(login_mode) {
+        if (login_mode) {
+            document.getElementById("register_form").classList.add("hidden");
+            document.getElementById("login_form").classList.remove("hidden");
+        } else {
+            document.getElementById("register_form").classList.remove("hidden");
+            document.getElementById("login_form").classList.add("hidden");
+        }
+    }
+
+    switch_mode(true);
+    register_btn.onclick = on_register_clicked;
+    login_btn.onclick = on_login_clicked;
+    switch_to_login.onclick = () => {
+        switch_mode(true);
+    };
+    switch_to_register.onclick = () => {
+        switch_mode(false);
+    };
+</script>
+
+</html>
