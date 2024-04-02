@@ -387,7 +387,7 @@ ul {
 
 .grid-1 {
   height: 100%;
-  padding: 8rem 0;
+  padding: 6rem 0;
 }
 
 .about-us div h1 {
@@ -396,7 +396,13 @@ ul {
 }
 
 .about-us div p {
+  margin-top: 1.5rem;
   font-size: 1.8rem;
+}
+
+.about-us-slogan {
+  font-size: 2.4rem;
+  color: #647431;
 }
 
 .img-right {
