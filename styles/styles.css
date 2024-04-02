@@ -205,6 +205,11 @@ ul {
   align-items: center;
 }
 
+.login-photo {
+  background-image: url(../images/login-background.jpg);
+  background-size: contain;
+}
+
 .login-btn {
   background: none;
   border: none;
