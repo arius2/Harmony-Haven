@@ -86,27 +86,25 @@ ul {
 
 .container-landing {
   height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Header */
 
 .background-rectangle1 {
-  /* height: 74rem;
-  width: 91.2rem; */
   height: 67rem;
-  width: 60rem;
+  width: 50rem;
   background-color: #fbe7d8;
-  border-radius: 0 0 500 500;
   position: absolute;
   z-index: -1;
   top: 0;
-  right: -15rem;
-  border-radius: 0 0 500% 500%;
+  right: 0;
+  border-radius: 0 0 45% 45%;
   overflow: hidden;
 }
 .background-rectangle2 {
-  width: 60rem;
-  height: 80rem;
+  width: 100rem;
+  height: 100rem;
   rotate: 36.12deg;
   background: linear-gradient(#ed9255, #fff3ec);
   transform: translate(20rem, -10rem);
@@ -136,7 +134,7 @@ ul {
 }
 
 .main-nav-link {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .main-nav-link:hover {
@@ -163,6 +161,29 @@ ul {
 }
 
 .hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover-underline-animation2 {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-underline-animation2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff3ec;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+  transform: scaleX(0);
+}
+
+.hover-underline-animation2:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -223,10 +244,10 @@ ul {
 .hero-decoration2 {
   position: absolute;
   height: auto;
-  width: 60rem;
-  top: 25rem;
+  width: 55rem;
+  top: 45rem;
   rotate: 180deg;
-  opacity: 90%;
+  opacity: 40%;
   overflow: hidden;
 }
 
@@ -234,7 +255,7 @@ ul {
   height: 48rem;
   position: absolute;
   top: 37rem;
-  right: 20rem;
+  right: 18rem;
   transform: translateY(-55%);
 }
 
@@ -245,7 +266,7 @@ ul {
   background-color: black;
   box-shadow: 20px 20px 20px #6b330d59;
   top: 37rem;
-  right: 25rem;
+  right: 23rem;
   transform: translateY(-55%);
   position: absolute;
   z-index: -1;
@@ -260,18 +281,111 @@ ul {
   opacity: 60%;
 }
 
+.icon-music {
+  font-size: 4rem;
+  position: absolute;
+  right: 25rem;
+  top: 13rem;
+  z-index: 2;
+}
+
+.icon-fish {
+  font-size: 4rem;
+  position: absolute;
+  z-index: 2;
+  transition: all ease-in-out;
+  top: 55rem;
+  right: 55rem;
+}
+
+.icon-utensils {
+  font-size: 4rem;
+  position: absolute;
+  z-index: 2;
+  transition: all ease-in-out;
+  top: 30rem;
+  right: 68rem;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 30%;
+  left: 15rem;
+  flex-direction: column;
+}
+
+.hero-text {
+  font-size: 5rem;
+}
+
+.hero-title {
+  color: #ed9255;
+  font-size: 7rem;
+}
+
+.hero-btns {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-btns button {
+  width: 18rem;
+  font-family: "Marcellus SC", serif;
+  font-size: 2rem;
+  padding: 1.5rem 0;
+  border-radius: 10rem;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-btn1 {
+  background-color: #ed9255;
+  color: #fff3ec;
+  transition: all 0.3s;
+}
+
+.hero-btn1:hover {
+  background: none;
+  box-shadow: inset 0 0 0 2px #ed9255;
+  color: #ed9255;
+}
+
+.hero-btn2 {
+  background: none;
+  box-shadow: inset 0 0 0 2px #ed9255;
+  color: #ed9255;
+  transition: all 0.3s;
+}
+
+.hero-btn2:hover {
+  background-color: #ed9255;
+  color: #fff3ec;
+}
+
 /* Animation */
-.hover-animation {
-  animation: MoveUpDown 10s linear infinite;
+.hover-animation-music {
+  animation: MoveUpDown 7s linear infinite;
+}
+
+.hover-animation-fish {
+  animation: MoveUpDown 3s linear infinite;
+}
+
+.hover-animation-utensils {
+  animation: MoveUpDown 5s linear infinite;
 }
 
 @keyframes MoveUpDown {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate(0, 0);
   }
   50% {
-    transform: translateY(2rem);
+    transform: translate(0.3rem, 0.3rem);
   }
 }
 
@@ -299,16 +413,17 @@ ul {
 
 .offer-details h2 {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 3rem;
   color: #1f2d0e;
 }
 
 .offer-details p {
   color: #647431;
   margin-top: 0.5rem;
+  font-size: 1.6rem;
 }
 
-button {
+.offer-card button {
   padding: 10px 20px;
   border: none;
   background-color: #1f2d0e;
@@ -321,7 +436,7 @@ button {
   margin-top: 2rem;
 }
 
-button:hover {
+.offer-card button:hover {
   background-color: #ed9255;
   transform: scale(1.01);
 }
