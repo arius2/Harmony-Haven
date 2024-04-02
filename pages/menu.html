@@ -2,228 +2,97 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <title>Restaurant Menu</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Harmonious Offers</title>
+    <link href="../styles/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/Harmony Haven IconAsset 1.png"
+    />
+
     <style>
-      body {
-        background-color: #283618;
-        color: #fefae0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
+      html {
+        overflow: scroll;
       }
 
-      h1 {
-        font-style: "DIDOT";
-        text-align: center;
-        margin-top: 30px;
+      .container-landing {
+        height: auto !important;
       }
 
-      section {
-        background-color: #fefae0;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-        border: 30px;
-        border-color: #071a07;
-      }
-
-      h2 {
-        color: #dda15e;
-        font-style: "Fantasy";
-        border-bottom: 2px solid #e4c49e;
-        padding-bottom: 10px;
+      .menu {
+        margin: 5rem 0rem;
+        width: 100%;
+        height: 100vh;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
       }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      li {
-        margin-bottom: 10px;
-        color: #0b290b;
-        font-style: "cursive";
-      }
-
-      .item {
-        display: flex;
-        align-items: center;
-      }
-
-      .item img {
-        width: 100px; /* Adjust as needed */
-        margin-right: 20px;
-        border-radius: 5px;
+      .pdf {
+        height: 100%;
+        width: 80%;
       }
     </style>
   </head>
+
   <body>
-    <h1>Restaurant Menu</h1>
+    <!-- Header -->
+    <div class="container-landing">
+      <header class="header">
+        <a href="../index.html">
+          <img
+            class="logo"
+            alt="Harmony logo"
+            src="../images/Harmony Haven logo 2 Horizontal.png"
+          />
+        </a>
 
-    <section>
-      <h2>APPETIZERS</h2>
-      <ul>
-        <img
-          src="https://www.skinnytaste.com/wp-content/uploads/2010/01/White-Bean-Crostini-8.jpg"
-          alt="Appetizers"
-          align="right"
-          style="width: 150px; height: 180px"
-        />
-        <li>1. French Fries - ₹100</li>
-        <li>2. Vegetable Pakora - ₹150</li>
-        <li>3. Paneer Tikka - ₹200</li>
-        <li>4. Onion Rings - ₹100</li>
-        <li>5. Mozzarella Sticks - ₹150</li>
-        <li>6. Chicken Wings - ₹250</li>
-      </ul>
-    </section>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li>
+              <a class="main-nav-link hover-underline-animation" href="#how"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                class="main-nav-link hover-underline-animation"
+                href="menu.html"
+                >Menu</a
+              >
+            </li>
+            <li>
+              <a
+                class="main-nav-link hover-underline-animation"
+                href="Offers.html"
+                >Offers</a
+              >
+            </li>
+            <li>
+              <a class="main-nav-link hover-underline-animation" href="#"
+                >Order</a
+              >
+            </li>
+          </ul>
+        </nav>
 
-    <section>
-      <h2>MAIN COURSE</h2>
-      <ul>
-        <img
-          src="https://img.freepik.com/premium-photo/indian-lunch-dinner-main-course-food-group-includes-paneer-butter-masala-dal-makhani-palak-paneer-roti-rice-etc-selective-focus_466689-6712.jpg"
-          alt="MAIN COURSE"
-          align="right"
-          style="width: 280px; height: 380"
-        />
-        <li>1. Dal Makhani - ₹250</li>
-        <li>2. Mix Veg - ₹301</li>
-        <li>3. Shahi Paneer - ₹410</li>
-        <li>4. Kadhai Paneer - ₹550</li>
-        <li>5. Butter Chicken - ₹1100</li>
-        <li>6. Palak Paneer - ₹950</li>
-        <li>7. Chicken Tikka Masala - ₹1200</li>
-        <li>8. Vegetable Biryani - ₹1050</li>
-      </ul>
-
-      <h2>BREADS</h2>
-      <ul>
-        <img
-          src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2015/04/Stuffed-Cheesy-Spinach-Naan-H2-WT.jpg?resize=600%2C900&ssl=1"
-          alt="BREADS"
-          align="right"
-          style="width: 150px; height: 130px"
-        />
-        <li>1.Naan - ₹200</li>
-        <li>2.Garlic Naan - ₹250</li>
-        <li>3.Roti - ₹150</li>
-        <li>4. Garlic Bread - ₹120</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>PIZZA</h2>
-      <ul>
-        <img
-          src="https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg"
-          alt="PIZZA"
-          align="right"
-          style="width: 160px; height: 180"
-        />
-        <li>1. Margherita Pizza - ₹300</li>
-        <li>2. Pepperoni Pizza - ₹350</li>
-        <li>3. Vegetarian Supreme Pizza - ₹320</li>
-        <li>4. BBQ Chicken Pizza - ₹380</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>PASTA & SPAGHETTI</h2>
-      <ul>
-        <img
-          src="https://images.immediate.co.uk/production/volatile/sites/30/2021/05/Fajita-pasta-e6e5b93.jpg"
-          alt="PASTA & SPAGHETTI"
-          align="right"
-          style="width: 150px"
-        />
-        <li>1. Spaghetti Carbonara - ₹350</li>
-        <li>2. Grilled Chicken Pasta - ₹400</li>
-        <li>3. Chicken Alfredo Pasta - ₹380</li>
-        <li>4. White Sauce Pasta - ₹180</li>
-        <li>5. Red Sauce Pasta - ₹120</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>CONTINENTO ADD-ONS</h2>
-      <ul>
-        <img
-          src="https://www.awesomecuisine.com/wp-content/uploads/2018/07/cabbage_manchurian_dry.jpg"
-          alt="CONTINENTO ADDONS"
-          align="right"
-          style="width: 160px; height: 200"
-        />
-        <li>1. Vegetable Manchurian - ₹200</li>
-        <li>2. Chicken Manchurian - ₹250</li>
-        <li>3. Club Sandwich - ₹320</li>
-        <li>4. Tomato Basil Soup - ₹180</li>
-        <li>5. French Onion Soup - ₹220</li>
-        <li>6. Lentil Soup - ₹190</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>ENTREMETS</h2>
-      <ul>
-        <img
-          src="https://www.allrecipes.com/thmb/X3hPFWTxatV8-md1K3cySsASdhQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/1133950-730afea623444976a59f002e1ed2c85a.jpg"
-          alt="ENTREMETS"
-          align="right"
-          style="width: 150px"
-        />
-        <li>1. Raita - ₹300</li>
-        <li>2. Papadum - ₹200</li>
-        <li>3. Salad - ₹100</li>
-        <li>4. Caesar Salad - ₹200</li>
-        <li>5. Caprese Salad - ₹180</li>
-        <li>6. Bruschetta - ₹150</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>DESSERTS</h2>
-      <ul>
-        <img
-          src="https://recipes.net/wp-content/uploads/2023/05/gulab-jamun-recipe_9fb159dc2674f395436a64666227c988.jpeg"
-          alt="DESSERTS"
-          align="right"
-          style="width: 150px"
-        />
-        <li>1. Gulab Jamun - ₹350</li>
-        <li>2. Rasmalai - ₹450</li>
-        <li>3. Apple Pie with Vanilla Ice Cream - ₹230</li>
-        <li>4. Chocolate Lava Cake - ₹210</li>
-        <li>5. Mango Mousse - ₹200</li>
-        <li>6. Chocolate Ice Cream - ₹80</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>BEVERAGES</h2>
-      <ul>
-        <img
-          src="https://tastesbetterfromscratch.com/wp-content/uploads/2020/03/Oreo-Milkshake-10-500x500.jpg"
-          alt="BEVERAGES"
-          align="right"
-          style="width: 160px; height: 220"
-        />
-        <li>1. Mango Lassi - ₹300</li>
-        <li>2. Masala Chai - ₹200</li>
-        <li>3. Chocolate Shake - ₹180</li>
-        <li>4. Vanilla Shake - ₹160</li>
-        <li>5. Strawberry Shake - ₹170</li>
-        <li>6. Oreo Shake - ₹200</li>
-        <li>7. Cappuccino - ₹150</li>
-        <li>8. Hot Chocolate - ₹170</li>
-        <li>9. Coke - ₹80</li>
-        <li>10. Pepsi - ₹80</li>
-      </ul>
+        <div class="login">
+          <div class="login-photo"></div>
+          <a href="">
+            <button class="login-btn">Login</button>
+          </a>
+        </div>
+      </header>
+    </div>
+    <!-- Menu -->
+    <section class="menu">
+      <iframe class="pdf" src="../images/Harmony Haven Menu.pdf"> </iframe>
     </section>
   </body>
 </html>
