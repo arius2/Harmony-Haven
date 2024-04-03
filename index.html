@@ -21,7 +21,6 @@
     ></script>
     <title>Harmony Haven</title>
 
-    <style></style>
   </head>
   <body>
     <div class="container">
@@ -68,9 +67,10 @@
           </nav>
 
           <div class="login">
+            <div id="username" class="hidden">UserName</div>
             <div class="login-photo"></div>
-            <a href="">
-              <button class="login-btn">Login</button>
+            <a href="javascript:void(0)">
+              <button class="login-btn" id="login-btn">Login</button>
             </a>
           </div>
         </header>
@@ -266,29 +266,52 @@
         </form>
       </div>
     </footer>
-
-    <!-- JavaScript Section -->
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="index.js">
-      // window.botpressWebChat.init({
-      //   composerPlaceholder: "How can I assist you?",
-      //   botConversationDescription: "Welcome to Harmony Haven!",
-      //   botId: "05c75896-b0f1-4689-8d56-e954317631d8",
-      //   hostUrl: "https://cdn.botpress.cloud/webchat/v1",
-      //   messagingUrl: "https://messaging.botpress.cloud",
-      //   clientId: "05c75896-b0f1-4689-8d56-e954317631d8",
-      //   webhookId: "0f33e6e9-d5a5-4799-93a7-84a7493919eb",
-      //   lazySocket: true,
-      //   themeName: "prism",
-      //   botName: "Hermione",
-      //   stylesheet:
-      //     "https://webchat-styler-css.botpress.app/prod/857f5f17-1be1-4945-8c96-9b90099d8cbe/v64835/style.css",
-      //   frontendVersion: "v1",
-      //   useSessionStorage: true,
-      //   enableConversationDeletion: true,
-      //   theme: "prism",
-      //   themeColor: "#2563eb",
-      // });
-    </script>
   </body>
+<!-- JavaScript Section -->
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="index.js"></script>
+<script type="module">
+import { auth, onAuthStateChanged, getUserData, logout } from "./auth.js";
+
+var uname_box = document.getElementById("username");
+var login_logout_btn = document.getElementById("login-btn");
+
+// Load user info
+login_logout_btn.onclick = () => {
+    window.location = "login.html";
+};
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        getUserData()
+            .then((data) => {
+                uname_box.innerHTML = data.val().name;
+                uname_box.classList.remove("hidden");
+            })
+            .catch((error) => {
+                console.error(error);
+                logout().catch((error) => {
+                    console.error(error);
+                });
+            });
+
+        login_logout_btn.innerHTML = "Logout";
+        login_logout_btn.onclick = () => {
+            logout().catch((error) => {
+                console.error(error);
+                alert("Failed to log out");
+            });
+        };
+    } else {
+        console.log("user signed out");
+
+        uname_box.innerHTML = "";
+        uname_box.classList.add("hidden");
+
+        login_logout_btn.innerHTML = "Login";
+        login_logout_btn.onclick = () => {
+            window.location = "login.html";
+        };
+    }
+});
+</script>
 </html>
