@@ -57,6 +57,9 @@ Medium: 11px
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 /* General Styles */
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -66,8 +69,8 @@ Medium: 11px
 html {
   font-size: 62.5%;
   background-color: #fffcfa;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  /* padding-left: 5rem;
+  padding-right: 5rem; */
   color: #1f2d0e;
   font-family: "Marcellus SC", serif;
   font-weight: 400;
@@ -86,10 +89,10 @@ ul {
 }
 
 .container-landing {
-  height: 80rem;
+  /* height: 80rem; */
   overflow-x: hidden;
   display: block !important;
-  width: 100%;
+  padding: 0 5rem;
 }
 
 /* Header */
@@ -113,8 +116,9 @@ ul {
   transform: translate(20rem, -10rem);
 }
 
-.logo {
-  height: 6rem;
+.logo,
+.login {
+  width: 24rem;
 }
 
 .logo:hover {
@@ -137,7 +141,7 @@ ul {
 }
 
 .main-nav-link {
-  font-size: 1.8rem;
+  font-size: 2rem;
   scroll-behavior: smooth;
   transition: all 0.3s;
 }
@@ -204,7 +208,6 @@ ul {
 .login {
   display: flex;
   gap: 1rem;
-  width: 29.6rem;
   justify-content: end;
   justify-self: flex-end;
   align-items: center;
@@ -219,8 +222,8 @@ ul {
 .login-btn {
   background: none;
   border: none;
-  width: 12rem;
-  height: 5.5rem;
+  width: 11.5rem;
+  height: 5rem;
   font-size: 2.4rem;
   color: #ed9255;
   font-family: "Marcellu SC", serif;
@@ -240,7 +243,14 @@ ul {
 /* Hero Section */
 
 .hero-section {
-  overflow: hidden;
+  /* overflow: hidden;  */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  padding: 5rem 8rem;
 }
 
 .hero-decoration1 {
@@ -262,12 +272,21 @@ ul {
   overflow: hidden;
 }
 
+.hero-img-div {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
 .hero-img {
+  display: block;
   height: 48rem;
-  position: absolute;
-  top: 37rem;
+  /* position: absolute; */
+  /* top: 37rem;
   right: 18rem;
-  transform: translateY(-55%);
+  transform: translateY(-55%); */
 }
 
 .hero-img-shadow {
@@ -276,9 +295,9 @@ ul {
   width: 40rem;
   background-color: black;
   box-shadow: 20px 20px 20px #6b330d59;
-  top: 37rem;
+  /* top: 37rem;
   right: 23rem;
-  transform: translateY(-55%);
+  transform: translateY(-55%); */
   position: absolute;
   z-index: -1;
   display: none;
@@ -296,8 +315,8 @@ ul {
 .icon-music {
   font-size: 4rem;
   position: absolute;
-  right: 25rem;
-  top: 13rem;
+  right: 20%;
+  top: 0%;
   z-index: 2;
 }
 
@@ -306,8 +325,8 @@ ul {
   position: absolute;
   z-index: 2;
   transition: all ease-in-out;
-  top: 55rem;
-  right: 55rem;
+  top: 100%;
+  right: 45%;
 }
 
 .icon-utensils {
@@ -315,17 +334,17 @@ ul {
   position: absolute;
   z-index: 2;
   transition: all ease-in-out;
-  top: 30rem;
-  right: 68rem;
+  top: 30%;
+  left: 0%;
 }
 
 .hero-content {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  position: absolute;
-  top: 20rem;
-  left: 10rem;
+  /* position: absolute;
+  top: 25rem;
+  left: 15rem; */
   flex-direction: column;
 }
 
@@ -382,7 +401,7 @@ ul {
 .about-us {
   margin: 2rem 5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   gap: 8rem;
   align-items: center;
   justify-content: flex-start;
@@ -395,13 +414,15 @@ ul {
 }
 
 .about-us div h1 {
-  font-size: 6.4rem;
+  font-size: 4.8rem;
   color: #ed9255;
 }
 
 .about-us div p {
   margin-top: 1.5rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-family: "Lora", serif;
+  letter-spacing: 1px;
 }
 
 .about-us-slogan {
@@ -409,8 +430,14 @@ ul {
   color: #647431;
 }
 
+.img-left,
 .img-right {
-  width: 62rem;
+  width: 100%;
+  max-width: 62rem;
+}
+
+.img-right {
+  /* width: 62rem; */
   border-radius: 0 2rem 2rem 0;
   box-shadow: 2px 2px 4px 0 #6b330d70;
   transition: all 0.3s ease-in-out;
@@ -422,7 +449,7 @@ ul {
 }
 
 .img-left {
-  width: 62rem;
+  /* width: 62rem; */
   border-radius: 2rem 0 0 2rem;
   box-shadow: -2px 2px 6px 0 #6b330d70;
   transition: all 0.3s ease-in-out;
@@ -444,6 +471,12 @@ footer {
   margin: 0;
 }
 
+iframe {
+  width: 100%;
+  height: 50rem;
+  /* margin: 0 2rem 2rem 0; */
+}
+
 .contact-info,
 .social-media,
 .opening-hours,
@@ -451,6 +484,8 @@ footer {
 .newsletter {
   margin-bottom: 30px;
   font-size: 1.4rem;
+  font-family: "Lora", serif;
+  font-size: 1.6rem;
 }
 
 .contact-info h3,
@@ -459,7 +494,16 @@ footer {
 .navigation h3,
 .newsletter h3 {
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: 2.4rem;
+}
+
+.contact-info p,
+.social-media p,
+.opening-hours p,
+.navigation p,
+.newsletter p {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .social-media ul {
@@ -528,6 +572,10 @@ footer {
   animation: MoveUpDown 5s linear infinite;
 }
 
+.animation-sizeIncrease {
+  animation: IncreaseSize 5s linear infinite;
+}
+
 @keyframes MoveUpDown {
   0%,
   100% {
@@ -535,6 +583,23 @@ footer {
   }
   50% {
     transform: translate(0.3rem, 0.3rem);
+  }
+}
+@keyframes IncreaseSize {
+  0%,
+  100% {
+    transform: scale(1);
+    transform: translateY(-0.3rem);
+  }
+
+  25%,
+  75% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: scale(1.02);
+    transform: translateY(0.3rem);
   }
 }
 
