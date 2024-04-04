@@ -95,6 +95,10 @@ ul {
   padding: 0 5rem;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Header */
 
 .background-rectangle1 {
@@ -208,6 +212,7 @@ ul {
 .login {
   display: flex;
   gap: 1rem;
+  max-width: 25vw;
   justify-content: end;
   justify-self: flex-end;
   align-items: center;
@@ -238,6 +243,11 @@ ul {
   color: #fbe7d8;
   transition: all 0.3s;
   box-shadow: none;
+}
+
+#username {
+  font-size: 2.4rem;
+  color: #ed9255;
 }
 
 /* Hero Section */

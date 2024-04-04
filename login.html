@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login_styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/Harmony Haven IconAsset 1.png"
+    />
+    <title>Login - Harmony Haven</title>
+</head>
+<body>
+    
+    <div id="form-container" class="form-container-hidden"">
+        <form id="register_form" class="hidden">
+          <h1>Register</h1>
+          <div class="form-input-group">
+            <input type="text" name="name" id="reg-name" placeholder="Name" autofocus>
+            <div class="form-input-error-message"></div>
+          </div>
+
+          <div class="form-input-group">
+            <input type="email" name="email" id="reg-email" placeholder="Email">
+            <div class="form-input-error-message"></div>
+          </div>
+
+          <div class="form-input-group">
+            <input type="password" name="password" id="reg-password" placeholder="Password">
+            <div class="form-input-error-message"></div>
+          </div>
+
+          <div class="form-input-group">
+            <input type="password" name="password2" id="reg-password2" placeholder="Confirm Password">
+            <div class="form-input-error-message"></div>
+          </div>
+
+          <button type="submit" id="register_btn">Register</button>
+          <p>
+              <a href="javascript:void(0)" id="switch_to_login">Already have an account? Log in</a>
+          </p>
+      </form>
+
+      <form id="login_form">
+          <h1>Login</h1>
+          <div class="form-input-group">
+            <input type="email" name="email" id="login-email" placeholder="Email" autofocus>
+            <div class="form-input-error-message"></div>
+          </div>
+
+          <div class="form-input-group">
+            <input type="password" name="password" id="login-password" placeholder="Password">
+            <div class="form-input-error-message"></div>
+          </div>
+
+          <button type="submit" id="login_btn">Login</button>
+          <p>
+              <a href="javascript:void(0)" id="switch_to_register">Don't have an account? Create Account</a>
+          </p>
+      </form>
+    </div>
+</body>
+
+<script type="module">
+    import { login, register, validate_email, validate_password, validate_passwords, validate_username } from "./auth.js";
+
+    // Functions
+    function set_form_input_error(inputElement, message){
+        inputElement.classList.add("form-input--error");
+        inputElement.parentElement.querySelector(".form-input-error-message").textContent = message;
+    }
+
+    function clear_form_input_error(inputElement){
+        inputElement.classList.remove("form-input--error");
+        inputElement.parentElement.querySelector(".form-input-error-message").textContent = "";
+    }
+
+    function validate_input(error_fn, ...input_elements) {
+        clear_form_input_error(input_elements[0]);
+        var error_message = error_fn(...input_elements.map(element => element.value));
+        if (error_message) {
+            set_form_input_error(input_elements[0], error_message);
+        }
+    }
+
+    function switch_mode(login_mode) {
+        if (login_mode) {
+            document.getElementById("register_form").classList.add("hidden");
+            document.getElementById("login_form").classList.remove("hidden");
+        } else {
+            document.getElementById("register_form").classList.remove("hidden");
+            document.getElementById("login_form").classList.add("hidden");
+        }
+    }
+
+    // Show/Hide login form
+    var form_container = document.getElementById("form-container");
+    form_container.classList.remove("form-container-hidden")
+    form_container.querySelectorAll(".form").forEach((form) => {
+      form.onclick = (e) => {
+        e.stopPropagation();
+      }
+    })
+
+    // Input elements
+    var reg_name_input = document.getElementById("reg-name");
+    var reg_email_input = document.getElementById("reg-email");
+    var reg_password_input = document.getElementById("reg-password");
+    var reg_password2_input = document.getElementById("reg-password2");
+
+    var login_email = document.getElementById("login-email");
+    var login_password = document.getElementById("login-password");
+
+    // Input error messages
+    reg_name_input.onblur = () => {validate_input(validate_username, reg_name_input);}
+    reg_email_input.onblur = () => {validate_input(validate_email, reg_email_input);}
+    reg_password_input.onblur = () => {
+        validate_input(validate_password, reg_password_input);
+        if (reg_password2_input.value != "") {
+            validate_input(validate_passwords, reg_password2_input, reg_password_input);
+        }
+    }
+    reg_password2_input.onblur = () => {validate_input(validate_passwords, reg_password2_input, reg_password_input);}
+
+    login_email.onblur = () => {validate_input(validate_email, login_email);}
+    login_password.onblur = () => {validate_input(validate_password, login_password);}
+
+    // Submit form
+    document.getElementById("register_form").onsubmit = (e) => {
+        e.preventDefault();
+        register(
+            reg_name_input.value,
+            reg_email_input.value,
+            reg_password_input.value,
+            reg_password2_input.value
+        ).then(() => {
+            window.location = "index.html";
+        }).catch((error) => {
+            alert(error.message);
+        })
+    }
+    document.getElementById("login_form").onsubmit = (e) => {
+        e.preventDefault();
+        login(login_email.value, login_password.value).then(() => {
+            window.location = "index.html";
+        })
+        .catch((error) => {
+            alert(error.message);
+        })
+    }
+
+    // Switch mode
+    document.getElementById("switch_to_login").onclick = (e) => {
+        e.preventDefault();
+        switch_mode(true);
+    };
+    document.getElementById("switch_to_register").onclick = (e) => {
+        e.preventDefault();
+        switch_mode(false);
+    };
+</script>
+</html>
