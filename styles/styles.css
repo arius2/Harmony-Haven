@@ -281,6 +281,7 @@ ul {
   transform: translateY(-55%);
   position: absolute;
   z-index: -1;
+  display: none;
 }
 
 .hero-decoration3 {
@@ -323,8 +324,8 @@ ul {
   justify-content: center;
   align-items: flex-start;
   position: absolute;
-  top: 30%;
-  left: 15rem;
+  top: 20rem;
+  left: 10rem;
   flex-direction: column;
 }
 
@@ -588,4 +589,3 @@ footer {
   background-color: #ed9255;
   transform: scale(1.01);
 }
-
