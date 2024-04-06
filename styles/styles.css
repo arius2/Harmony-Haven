@@ -412,7 +412,7 @@ ul {
   margin: 2rem 5rem;
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: 8rem;
+  gap: 6rem;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 10rem;
